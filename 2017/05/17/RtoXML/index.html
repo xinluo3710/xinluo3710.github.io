@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>RtoXML | 水里</title>
+  <title>使用R语言将XML转换为CSV文件 | 水里</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##使用R语言将XML转换为CSV文件 这里使用的xml文件为CASOS提供的数据集company.xml首先分析xml文件，截取一段xml代码">
+  <meta name="description" content="这里使用的xml文件为CASOS提供的数据集company.xml首先分析xml文件，截取一段xml代码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RtoXML">
+<meta property="og:title" content="使用R语言将XML转换为CSV文件">
 <meta property="og:url" content="https://xinluo3710.github.io/2017/05/17/RtoXML/index.html">
 <meta property="og:site_name" content="水里">
-<meta property="og:description" content="##使用R语言将XML转换为CSV文件 这里使用的xml文件为CASOS提供的数据集company.xml首先分析xml文件，截取一段xml代码">
-<meta property="og:updated_time" content="2017-05-17T08:14:14.827Z">
+<meta property="og:description" content="这里使用的xml文件为CASOS提供的数据集company.xml首先分析xml文件，截取一段xml代码">
+<meta property="og:updated_time" content="2017-05-17T08:32:32.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RtoXML">
-<meta name="twitter:description" content="##使用R语言将XML转换为CSV文件 这里使用的xml文件为CASOS提供的数据集company.xml首先分析xml文件，截取一段xml代码">
+<meta name="twitter:title" content="使用R语言将XML转换为CSV文件">
+<meta name="twitter:description" content="这里使用的xml文件为CASOS提供的数据集company.xml首先分析xml文件，截取一段xml代码">
   
     <link rel="alternate" href="/atom.xml" title="水里" type="application/atom+xml">
   
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      RtoXML
+      使用R语言将XML转换为CSV文件
     </h1>
   
 
@@ -85,8 +85,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##使用R语言将XML转换为CSV文件</p>
-<p>这里使用的xml文件为CASOS提供的数据集company.xml<br>首先分析xml文件，截取一段xml代码</p>
+        <p>这里使用的xml文件为CASOS提供的数据集company.xml<br>首先分析xml文件，截取一段xml代码</p>
 <a id="more"></a>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">DynamicNetwork</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">MetaNetwork</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">nodes</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">nodeclass</span> <span class="attr">type</span>=<span class="string">"agent"</span> <span class="attr">id</span>=<span class="string">"agent"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">node</span> <span class="attr">id</span>=<span class="string">"LDR"</span> <span class="attr">title</span>=<span class="string">"Project Manager"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">node</span> <span class="attr">id</span>=<span class="string">"Mgr1"</span> <span class="attr">title</span>=<span class="string">"Art Director"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">nodeclass</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">nodeclass</span> <span class="attr">type</span>=<span class="string">"task"</span> <span class="attr">id</span>=<span class="string">"task"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">node</span> <span class="attr">id</span>=<span class="string">"T1"</span> <span class="attr">title</span>=<span class="string">"Project Management"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">node</span> <span class="attr">id</span>=<span class="string">"T2"</span> <span class="attr">title</span>=<span class="string">"Administration"</span> /&gt;</span>   </div><div class="line"><span class="tag">&lt;/<span class="name">nodeclass</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">nodes</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">networks</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">network</span> <span class="attr">sourceType</span>=<span class="string">"agent"</span> <span class="attr">targetType</span>=<span class="string">"agent"</span> <span class="attr">id</span>=<span class="string">"agent x agent"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">source</span>=<span class="string">"LDR"</span> <span class="attr">target</span>=<span class="string">"Mgr1"</span> <span class="attr">type</span>=<span class="string">"double"</span> <span class="attr">value</span>=<span class="string">"1.0000"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">source</span>=<span class="string">"LDR"</span> <span class="attr">target</span>=<span class="string">"Mgr2"</span> <span class="attr">type</span>=<span class="string">"double"</span> <span class="attr">value</span>=<span class="string">"1.0000"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">network</span>&gt;</span>   </div><div class="line"><span class="tag">&lt;/<span class="name">DynamicNetwork</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">MetaNetwork</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>可以看到，在根节点底下有nodes和network两大类，需要提取的是在nodes这个节点下id和title的属性值，network节点下source和target的值，确定需要用到的组成csv文件的属性后，开始对xml文件进行处理。</p>
@@ -100,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xinluo3710.github.io/2017/05/17/RtoXML/" data-id="cj2sq6f220001xcu0k6z27hg9" class="article-share-link">Share</a>
+      <a data-url="https://xinluo3710.github.io/2017/05/17/RtoXML/" data-id="cj2sqc2xy00008wu09mb3z3ha" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +148,7 @@
       <ul>
         
           <li>
-            <a href="/2017/05/17/RtoXML/">RtoXML</a>
+            <a href="/2017/05/17/RtoXML/">使用R语言将XML转换为CSV文件</a>
           </li>
         
           <li>
